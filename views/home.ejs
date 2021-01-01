@@ -1,0 +1,16 @@
+<%- include("partials/header"); -%>
+  <h1>Home</h1>
+  <p><%=home%></p>
+  <%posts.forEach(function(element){%>
+    <h1>
+      <%=element.Title%>
+    </h1>
+    <p>
+      <%=element.body.substring(0,Math.min(100,element.body.length))+"..."%>
+      <a href="/post/<%=element._id%>">Read More</a>
+    </p>
+  <%});%>
+  <a href="/compose" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-plus-sign fixedbutton"></span> Compose
+        </a>
+<%- include("partials/footer"); -%>
